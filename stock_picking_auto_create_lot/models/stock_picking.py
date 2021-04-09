@@ -23,6 +23,6 @@ class StockPicking(models.Model):
                 )
             ):
                 line.lot_id = self.env["stock.production.lot"].create(
-                    {"product_id": line.product_id.id, "company_id": line.company_id.id}
+                    {"product_id": line.product_id.id, "company_id": line.company_id.id, "expiration_date": line.expiration_date}
                 )
         return super().button_validate()
